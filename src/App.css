@@ -1,0 +1,132 @@
+.App {
+  min-height: 100vh;
+  background: #0a0a0b;
+  color: #f5f5f5;
+}
+
+::-webkit-scrollbar { width: 10px; height: 10px; }
+::-webkit-scrollbar-track { background: #0a0a0b; }
+::-webkit-scrollbar-thumb { background: #dc2626; border-radius: 10px; }
+::-webkit-scrollbar-thumb:hover { background: #b91c1c; }
+
+@keyframes marquee {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+.marquee-track { animation: marquee 30s linear infinite; }
+.marquee-track:hover { animation-play-state: paused; }
+
+@keyframes marquee-slow {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+.marquee-slow { animation: marquee-slow 45s linear infinite; }
+
+.text-glow-red { text-shadow: 0 0 40px rgba(220, 38, 38, 0.4); }
+
+.grid-bg {
+  background-image:
+    linear-gradient(rgba(255,255,255,0.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,255,255,0.04) 1px, transparent 1px);
+  background-size: 60px 60px;
+}
+
+.grid-bg-light {
+  background-image:
+    linear-gradient(rgba(0,0,0,0.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0,0,0,0.04) 1px, transparent 1px);
+  background-size: 60px 60px;
+}
+
+.diagonal-stripes {
+  background-image: repeating-linear-gradient(
+    45deg,
+    rgba(220, 38, 38, 0.05),
+    rgba(220, 38, 38, 0.05) 2px,
+    transparent 2px,
+    transparent 12px
+  );
+}
+
+@keyframes revealUp {
+  from { opacity: 0; transform: translateY(40px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+.reveal-up { animation: revealUp 0.8s ease-out both; }
+
+@keyframes pulseDot {
+  0%, 100% { transform: scale(1); opacity: 1; }
+  50% { transform: scale(1.6); opacity: 0.6; }
+}
+.pulse-dot { animation: pulseDot 1.5s ease-in-out infinite; }
+
+@keyframes slideInRight {
+  from { opacity: 0; transform: translateX(40px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+.slide-in-right { animation: slideInRight 0.8s ease-out both; }
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-12px); }
+}
+.float-anim { animation: float 4s ease-in-out infinite; }
+
+.stat-card:hover .stat-num { transform: scale(1.1); }
+.stat-num { transition: transform 0.4s cubic-bezier(.2,.8,.2,1); display: inline-block; }
+
+.product-card { transition: transform 0.5s cubic-bezier(.2,.8,.2,1), box-shadow 0.5s; }
+.product-card:hover { transform: translateY(-8px); }
+.product-card .product-img { transition: transform 0.7s ease; }
+.product-card:hover .product-img { transform: scale(1.12); }
+
+.magnetic-btn { transition: transform 0.3s cubic-bezier(.2,.8,.2,1); }
+.magnetic-btn:hover { transform: translateY(-3px); }
+
+@keyframes shimmer {
+  0% { background-position: -1000px 0; }
+  100% { background-position: 1000px 0; }
+}
+.shimmer-line {
+  background: linear-gradient(90deg, transparent, rgba(220,38,38,0.6), transparent);
+  background-size: 1000px 100%;
+  animation: shimmer 3s linear infinite;
+}
+
+.industry-card { position: relative; overflow: hidden; transition: all 0.5s cubic-bezier(.2,.8,.2,1); }
+.industry-card::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, #dc2626 0%, #991b1b 100%);
+  transform: translateY(100%);
+  transition: transform 0.5s cubic-bezier(.2,.8,.2,1);
+  z-index: 0;
+}
+.industry-card:hover::before { transform: translateY(0); }
+.industry-card > * { position: relative; z-index: 1; }
+
+.project-card .project-overlay {
+  transform: translateY(100%);
+  transition: transform 0.5s cubic-bezier(.2,.8,.2,1);
+}
+.project-card:hover .project-overlay { transform: translateY(0); }
+.project-card .project-img { transition: transform 0.8s ease; }
+.project-card:hover .project-img { transform: scale(1.1); }
+
+.nav-link { position: relative; }
+.nav-link::after {
+  content: '';
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: #dc2626;
+  transition: width 0.3s ease;
+}
+.nav-link:hover::after { width: 100%; }
+
+::selection { background: #dc2626; color: #fff; }
+
+.form-input:focus { outline: 2px solid #dc2626; outline-offset: 2px; }
