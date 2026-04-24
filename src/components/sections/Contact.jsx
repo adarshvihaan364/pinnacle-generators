@@ -41,7 +41,7 @@ const Contact = () => {
   };
 
   return (
-    <section id="contact" className="relative w-full bg-[#050505] text-white py-24 md:py-32 overflow-hidden">
+    <section id="contact" className="relative w-full bg-white text-black py-24 md:py-32 overflow-hidden">
       {/* Background Graphic */}
       <div className="absolute top-0 right-0 w-[600px] h-[600px] rounded-full bg-primary/5 blur-[120px]" />
       
@@ -59,7 +59,7 @@ const Contact = () => {
               WITH US.
             </h2>
 
-            <p className="text-white/50 text-xl font-medium leading-relaxed mb-16 max-w-md">
+            <p className="text-black/50 text-xl font-medium leading-relaxed mb-16 max-w-md">
               Let's discuss your specific energy requirements. Our team of seasoned engineers will blueprint your optimal power solution.
             </p>
 
@@ -72,13 +72,13 @@ const Contact = () => {
               ].map((c, i) => {
                 const Icon = c.icon;
                 const inner = (
-                  <div className="flex items-center gap-6 p-6 rounded-[32px] bg-white/[0.03] border border-white/5 hover:border-primary/20 hover:bg-white/[0.05] transition-all duration-500 group">
-                    <div className="w-14 h-14 rounded-2xl bg-white/5 flex items-center justify-center group-hover:bg-primary transition-colors">
-                      <Icon className="w-6 h-6 text-primary group-hover:text-white transition-colors" />
+                  <div className="flex items-center gap-6 p-6 rounded-[32px] bg-black/[0.02] border border-black/5 hover:border-[#DD3333]/30 hover:bg-white hover:shadow-lg hover:shadow-[#DD3333]/5 transition-all duration-500 group">
+                    <div className="w-14 h-14 rounded-2xl bg-black/5 flex items-center justify-center group-hover:bg-[#DD3333] transition-colors">
+                      <Icon className="w-6 h-6 text-[#DD3333] group-hover:text-white transition-colors" />
                     </div>
                     <div>
-                      <div className="text-[10px] font-black uppercase tracking-[0.2em] text-white/30 mb-1">{c.label}</div>
-                      <div className="text-lg font-bold text-white tracking-tight">{c.val}</div>
+                      <div className="text-[10px] font-black uppercase tracking-[0.2em] text-black/20 mb-1 group-hover:text-[#DD3333] transition-colors">{c.label}</div>
+                      <div className="text-lg font-bold text-black tracking-tight">{c.val}</div>
                     </div>
                   </div>
                 );
@@ -94,7 +94,7 @@ const Contact = () => {
                 href="https://wa.me/919246336611"
                 target="_blank"
                 rel="noreferrer"
-                className="reveal-up flex items-center justify-center gap-3 bg-[#25D366] hover:bg-[#25D366]/90 text-white px-8 py-5 rounded-full font-black tracking-widest text-xs uppercase transition-all shadow-xl shadow-green-950/20"
+                className="reveal-up flex items-center justify-center gap-3 bg-[#25D366] hover:bg-[#25D366]/90 text-white px-8 py-5 rounded-full font-black tracking-widest text-xs uppercase transition-all shadow-xl shadow-green-950/10"
                 style={{ animationDelay: '0.4s' }}
               >
                 <MessageCircle className="w-5 h-5 fill-white" />
@@ -105,81 +105,76 @@ const Contact = () => {
 
           {/* Right Side: Quote Form */}
           <div className="lg:col-span-7 reveal-up" style={{ animationDelay: '0.5s' }}>
-            <div className="bg-white rounded-[48px] p-10 md:p-16 shadow-2xl scale-100 lg:scale-105 border border-black/5">
+            <div className="bg-[#fcfcfc] rounded-[48px] p-10 md:p-16 shadow-2xl scale-100 lg:scale-105 border border-black/5">
               <h3 className="font-display text-4xl font-black text-black tracking-tighter mb-4">Request a Quote</h3>
-              <p className="text-black/40 font-medium mb-12">Submit your details for a rigorous technical assessment and quotation.</p>
+              <p className="text-black/40 font-medium mb-12 italic">Submit your details for a rigorous technical assessment and quotation.</p>
 
               <form onSubmit={onSubmit} className="space-y-6">
                 <div className="grid md:grid-cols-2 gap-6">
                   <div className="space-y-2">
-                    <label className="text-[10px] font-black uppercase tracking-widest text-black/30 ml-4">Full Name</label>
-                    <input
-                      name="name"
-                      value={form.name}
-                      onChange={onChange}
-                      placeholder="e.g. John Doe"
-                      className="w-full px-8 py-5 rounded-full bg-black/5 border border-transparent focus:border-primary focus:bg-white transition-all text-black font-bold outline-none placeholder:text-black/20"
-                      required
-                    />
-                  </div>
-                  <div className="space-y-2">
-                    <label className="text-[10px] font-black uppercase tracking-widest text-black/30 ml-4">Company Entity</label>
+                    <label className="text-[10px] font-black uppercase tracking-widest text-black/30 ml-4">Company Name</label>
                     <input
                       name="company"
                       value={form.company}
                       onChange={onChange}
-                      placeholder="Your Logistics Ltd"
-                      className="w-full px-8 py-5 rounded-full bg-black/5 border border-transparent focus:border-primary focus:bg-white transition-all text-black font-bold outline-none placeholder:text-black/20"
+                      placeholder="e.g. Reliance Jio"
+                      className="w-full px-8 py-5 rounded-full bg-white border border-black/5 focus:border-primary focus:shadow-lg focus:shadow-primary/5 transition-all text-black font-bold outline-none placeholder:text-black/10"
+                      required
+                    />
+                  </div>
+                  <div className="space-y-2">
+                    <label className="text-[10px] font-black uppercase tracking-widest text-black/30 ml-4">Name</label>
+                    <input
+                      name="name"
+                      value={form.name}
+                      onChange={onChange}
+                      placeholder="Your Name"
+                      className="w-full px-8 py-5 rounded-full bg-white border border-black/5 focus:border-primary focus:shadow-lg focus:shadow-primary/5 transition-all text-black font-bold outline-none placeholder:text-black/10"
+                      required
                     />
                   </div>
                 </div>
 
                 <div className="grid md:grid-cols-2 gap-6">
                   <div className="space-y-2">
-                    <label className="text-[10px] font-black uppercase tracking-widest text-black/30 ml-4">Phone Protocol</label>
+                    <label className="text-[10px] font-black uppercase tracking-widest text-black/30 ml-4">Contact Number</label>
                     <input
                       name="phone"
                       value={form.phone}
                       onChange={onChange}
                       type="tel"
                       placeholder="+91 00000 00000"
-                      className="w-full px-8 py-5 rounded-full bg-black/5 border border-transparent focus:border-primary focus:bg-white transition-all text-black font-bold outline-none placeholder:text-black/20"
+                      className="w-full px-8 py-5 rounded-full bg-white border border-black/5 focus:border-primary focus:shadow-lg focus:shadow-primary/5 transition-all text-black font-bold outline-none placeholder:text-black/10"
                       required
                     />
                   </div>
                   <div className="space-y-2">
-                    <label className="text-[10px] font-black uppercase tracking-widest text-black/30 ml-4">KVA Specification</label>
-                    <select
+                    <label className="text-[10px] font-black uppercase tracking-widest text-black/30 ml-4">KVA Requirement</label>
+                    <input
                       name="kva"
                       value={form.kva}
                       onChange={onChange}
-                      className="w-full px-8 py-5 rounded-full bg-black/5 border border-transparent focus:border-primary focus:bg-white transition-all text-black font-bold outline-none appearance-none"
-                    >
-                      <option value="">Select Range</option>
-                      <option>5 - 50 KVA</option>
-                      <option>50 - 250 KVA</option>
-                      <option>250 - 500 KVA</option>
-                      <option>500 - 1000 KVA</option>
-                      <option>1000 - 2500 KVA</option>
-                    </select>
+                      placeholder="e.g. 500 KVA"
+                      className="w-full px-8 py-5 rounded-full bg-white border border-black/5 focus:border-primary focus:shadow-lg focus:shadow-primary/5 transition-all text-black font-bold outline-none placeholder:text-black/10"
+                    />
                   </div>
                 </div>
 
                 <div className="space-y-2">
-                  <label className="text-[10px] font-black uppercase tracking-widest text-black/30 ml-4">Project Requirements</label>
+                  <label className="text-[10px] font-black uppercase tracking-widest text-black/30 ml-4">Project Requirements (Optional)</label>
                   <textarea
                     name="message"
                     value={form.message}
                     onChange={onChange}
-                    rows={4}
+                    rows={3}
                     placeholder="Briefly describe your installation site or power needs..."
-                    className="w-full px-8 py-6 rounded-[32px] bg-black/5 border border-transparent focus:border-primary focus:bg-white transition-all text-black font-bold outline-none placeholder:text-black/20 resize-none"
+                    className="w-full px-8 py-6 rounded-[32px] bg-white border border-black/5 focus:border-primary focus:shadow-lg focus:shadow-primary/5 transition-all text-black font-bold outline-none placeholder:text-black/10 resize-none"
                   ></textarea>
                 </div>
 
                 <button
                   type="submit"
-                  className="w-full inline-flex items-center justify-center gap-3 bg-primary hover:bg-black text-white px-10 py-6 rounded-full font-black tracking-[0.2em] uppercase text-xs transition-all shadow-2xl shadow-primary/30 group"
+                  className="w-full inline-flex items-center justify-center gap-3 bg-[#DD3333] hover:bg-black text-white px-10 py-6 rounded-full font-black tracking-[0.2em] uppercase text-xs transition-all shadow-2xl shadow-red-500/20 group"
                 >
                   Submit Brief <Send className="w-4 h-4 group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />
                 </button>

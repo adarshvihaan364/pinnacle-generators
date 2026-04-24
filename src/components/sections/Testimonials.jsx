@@ -33,12 +33,14 @@ export default function Testimonials() {
                 {[...Array(5)].map((_, i) => (
                   <Star
                     key={i}
-                    className={`w-5 h-5 ${i < 4 ? 'text-primary fill-primary' : 'text-black/10'}`}
+                    size={20}
+                    fill={i < 5 ? "#DD3333" : "none"}
+                    color={i < 5 ? "#DD3333" : "#e5e7eb"}
                   />
                 ))}
               </div>
-              <div className="font-display text-5xl font-black mb-2 tracking-tighter">4.8<span className="text-black/20">/5</span></div>
-              <p className="text-xs font-black uppercase tracking-widest text-black/40">Based on 2M+ customer installations across India</p>
+              <div className="font-display text-5xl font-black mb-2 tracking-tighter">4.9<span className="text-black/20">/5</span></div>
+
             </div>
           </div>
 
@@ -54,26 +56,35 @@ export default function Testimonials() {
                 </p>
                 
                 <div className="flex flex-col md:flex-row md:items-center justify-between gap-8 pt-8 border-t border-black/5">
-                  <div className="flex items-center gap-5">
-                    <div className="w-16 h-16 rounded-2xl bg-black font-display text-white flex items-center justify-center font-black text-2xl shadow-2xl shadow-black/20 group-hover:bg-primary transition-colors duration-700">
-                      {initials}
+                  <div className="flex flex-col gap-3">
+                    <div className="flex items-center gap-1">
+                      {[...Array(5)].map((_, i) => (
+                        <Star
+                          key={i}
+                          size={24}
+                          fill={i < Math.round(t.rating) ? "#DD3333" : "none"}
+                          color={i < Math.round(t.rating) ? "#DD3333" : "#e5e7eb"}
+                        />
+                      ))}
                     </div>
                     <div>
-                      <div className="font-display text-xl font-black tracking-tight">{t.name}</div>
-                      <div className="text-[10px] font-black uppercase tracking-widest text-primary mt-1">{t.company}</div>
+                       <div className="font-display text-xl font-black tracking-tight">{t.name}</div>
+                       <div className="text-[10px] font-black uppercase tracking-widest text-primary mt-1">{t.company}</div>
                     </div>
                   </div>
                   
                   <div className="flex items-center gap-3">
                     <button
                       onClick={() => setIdx((idx - 1 + testimonials.length) % testimonials.length)}
-                      className="w-14 h-14 rounded-2xl bg-black/5 text-black hover:bg-black hover:text-white transition-all flex items-center justify-center group/btn"
+                      style={{ backgroundColor: '#DD3333' }}
+                      className="w-14 h-14 rounded-2xl text-white hover:opacity-80 shadow-lg shadow-red-500/20 transition-all flex items-center justify-center group/btn"
                     >
                       <ChevronLeft className="w-6 h-6 group-hover/btn:-translate-x-1 transition-transform" />
                     </button>
                     <button
                       onClick={() => setIdx((idx + 1) % testimonials.length)}
-                      className="w-14 h-14 rounded-2xl bg-primary text-white hover:bg-black shadow-lg shadow-primary/20 transition-all flex items-center justify-center group/btn"
+                      style={{ backgroundColor: '#DD3333' }}
+                      className="w-14 h-14 rounded-2xl text-white hover:opacity-80 shadow-lg shadow-red-500/20 transition-all flex items-center justify-center group/btn"
                     >
                       <ChevronRight className="w-6 h-6 group-hover/btn:translate-x-1 transition-transform" />
                     </button>

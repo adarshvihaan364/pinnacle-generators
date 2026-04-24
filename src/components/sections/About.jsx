@@ -24,7 +24,7 @@ export default function About() {
               <img
                 alt="Corporate Office"
                 className="w-full h-[450px] md:h-[550px] object-cover transition-transform group-hover:scale-110 duration-1000 grayscale-[0.5] group-hover:grayscale-0"
-                src="https://images.unsplash.com/photo-1541888086225-eceb15c9f50f?auto=format&fit=crop&w=1200&q=80"
+                src="https://pinnaclegenerators.com/wp-content/uploads/2025/02/Untitled-design-24.png"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent flex flex-col justify-end p-8 md:p-12">
                 <div className="mb-2">
